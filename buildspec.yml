@@ -7,7 +7,11 @@ phases:
     commands:
       - echo Installing dependencies
       - sudo apt-get update
-      - sudo apt-get install -y some-dependency  # Replace with actual dependencies
+      - |
+        if ! sudo apt-get install -y <your-dependency>; then
+          echo "Dependency installation failed!"
+          exit 1
+        fi
   pre_build:
     commands:
       - echo Starting pre-build phase
@@ -24,5 +28,3 @@ artifacts:
   files:
     - target/*.jar
   discard-paths: yes
-
-
