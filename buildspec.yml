@@ -15,7 +15,7 @@ phases:
   pre_build:
     commands:
       - echo Starting pre-build phase
-      - ./pre_build_script.sh
+      # Removed ./pre_build_script.sh as you don't have it
   build:
     commands:
       - echo Building the application
