@@ -8,7 +8,7 @@ phases:
       - echo Installing dependencies
       - sudo apt-get update
       - |
-        if ! sudo apt-get install -y <your-dependency>; then
+        if ! sudo apt-get install -y curl; then
           echo "Dependency installation failed!"
           exit 1
         fi
