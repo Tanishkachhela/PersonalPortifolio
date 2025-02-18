@@ -4,24 +4,16 @@ phases:
   install:
     runtime-versions:
       nodejs: latest
-    commands:
-      - echo "No dependencies required for static website."
-
   build:
     commands:
-      - echo "Building static website package..."
-      - mkdir -p deploy
-      - cp -r index.html main.js styles.css img deploy/
-
+      - echo "Building the website..."
+      - mkdir -p output
+      - cp -r * output/
   post_build:
     commands:
-      - echo "Build complete. Preparing deployment artifacts..."
-      - zip -r deploy.zip deploy/
-      - echo "Uploading artifacts to S3..."
-      - aws s3 cp deploy.zip s3://your-s3-bucket-name/
+      - echo "Build complete!"
 
 artifacts:
   files:
-    - appspec.yml
-    - deploy/**
-  discard-paths: no
+    - '**/*'
+  base-directory: output
