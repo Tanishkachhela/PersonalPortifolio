@@ -6,8 +6,8 @@ files:
     overwrite: yes
 permissions:
   - object: /var/www/html
-    owner: apache
-    group: apache
+    owner: root
+    group: root
 hooks:
   AfterInstall:
     - location: scripts/restart_apache.sh
