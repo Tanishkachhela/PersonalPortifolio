@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "Building the website..."
       - mkdir -p output
-      - cp -r * output/
+      - rsync -av --exclude 'output' ./ output/
   post_build:
     commands:
       - echo "Build complete!"
