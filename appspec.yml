@@ -10,5 +10,5 @@ permissions:
 hooks:
   AfterInstall:
     - location: scripts/restart_apache.sh
-      timeout: 300
+      timeout: 60
       runas: root
